@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>車況透視鏡</title>
+<meta name="description" content="2026 和泰 AI 黑客松參賽作品：車況透視鏡 — 以 LINE 串聯回廠前、中、後的車況、報價、進度與完工資訊（概念驗證原型，示意資料）">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Saira+Semi+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/*__CSS__*/
+</style>
+</head>
+<body data-view="present">
+<header class="top">
+  <div class="brand"><span id="brand" aria-hidden="true"></span><div><b>車況透視鏡</b><small>TOYOTA 回廠服務 AI 系統原型</small></div></div>
+  <span class="hk">2026 和泰 AI 黑客松｜概念驗證原型・示意資料</span>
+  <nav class="vtabs" aria-label="檢視切換">
+    <button class="vtab on" data-act="setView" data-arg="present">雙視角展示</button>
+    <button class="vtab" data-act="setView" data-arg="owner">車主端</button>
+    <button class="vtab" data-act="setView" data-arg="console">服務廠端</button>
+    <button class="vtab" data-act="setView" data-arg="dash">成效儀表板</button>
+    <button class="vtab" data-act="setView" data-arg="pain">痛點分析</button>
+    <button class="vtab" data-act="setView" data-arg="arch">架構與落地</button>
+  </nav>
+  <div class="tclock"><span>模擬時間</span><b class="js-clock num">13:15</b></div>
+  <button class="tbtn" data-act="settings" aria-label="系統設定" title="系統設定（AI 引擎、車型、速度）" id="gearBtn"></button>
+</header>
+
+<main class="stage">
+  <aside class="rail" id="rail" aria-label="展示流程"></aside>
+
+  <section class="phone-col" id="phoneCol" aria-label="車主手機畫面">
+    <div class="phone-wrap" id="phoneWrap">
+      <div class="phone" id="phone">
+        <div class="screen" id="screen">
+          <div class="island"></div>
+          <div class="sbar"><span class="js-clock">13:15</span><span class="sig" id="sbarIcons"></span></div>
+          <div class="line-app">
+            <div class="lhd" id="lineHead"></div>
+            <div class="chat" id="chatList" aria-live="polite"></div>
+            <div class="foot" id="chatFoot"></div>
+          </div>
+          <div class="liff" id="liff"></div>
+          <div class="banner" id="banner"></div>
+          <div class="pdialog" id="pdialog"></div>
+          <div class="ptoast" id="ptoast" role="status"></div>
+          <div class="homebar"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-col" aria-label="情境說明"><div id="storyPanel"></div></section>
+
+  <section class="console-col" aria-label="服務廠工作台"><div class="cs" id="console"></div></section>
+
+  <section class="page-col" id="pageCol"><div id="page"></div></section>
+</main>
+
+<button class="mfab" data-act="mSheet"><span>展示流程</span><b id="mStep">0/13</b></button>
+<div class="mdimS" data-act="mSheet"></div>
+<div id="tapdot" aria-hidden="true"></div>
+<div id="vtip" role="tooltip"></div>
+<div id="toast" role="status"></div>
+<div id="modal"></div>
+
+<script>
+/*__JS__*/
+</script>
+</body>
+</html>
